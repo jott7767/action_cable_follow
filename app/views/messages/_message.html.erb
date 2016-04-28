@@ -1,14 +1,14 @@
 
 <div class="card-panel white indigo-text">
       <div class="avatar-pic">
-      <% if message.user.twitter == ""  %>
+      <% if message.user.twitter.nil? %>
         <%= image_tag("https://www.genymotion.com/wp-content/uploads/2015/12/genymotion-android-emulator-developers.png") %>
       <% else %>
         <%= image_tag("https://twitter.com/"+message.user.twitter.to_s+"/profile_image?size=original") %>
       <% end %>
 
       <block class="flow-text">
-      <%= message.content %>
+      <%= message.content.html_safe %>
       </block>
 <hr>
 <div class="grey-text darken-2 right-align">
@@ -19,4 +19,3 @@
 </div>
 </div>
 </div>
-
